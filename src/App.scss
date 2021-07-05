@@ -28,10 +28,10 @@
   --very-dark-blue-text: hsl(230, 17%, 14%);
   --hover-gray: #e1e3f0;
 
-  max-width: 1440px;
-  overflow-y: hidden;
-  margin: 0 auto;
+  overflow-y: auto;
+
   position: relative;
+  flex: 1;
 
   .background {
     position: absolute;
@@ -47,6 +47,15 @@
   .content {
     position: relative;
     padding: 0 165px;
+    max-width: 1440px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  display: flex;
+  flex-direction: column;
+  .Attribution {
+    margin-top: auto;
   }
 
   &.dark {
