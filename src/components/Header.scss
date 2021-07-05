@@ -1,0 +1,130 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+
+    h1 {
+        margin: 0;
+        color: var(--very-dark-blue-text);
+    }
+
+    .total-followers {
+        color: var(--dark-grayish-blue-text);
+    }
+
+    .mode {
+        color: var(--mode-gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dark-mode,
+    .switch {
+        margin-left: 10px;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+
+        &.noSelect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        --size: 15px;
+        width: var(--size);
+        height: var(--size);
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+
+    input:checked + .slider {
+        background: linear-gradient(45deg, var(--toggle-blue), var(--toggle-green) 60%);
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(17px);
+        -ms-transform: translateX(17px);
+        transform: translateX(17px);
+    }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .total-followers,
+    .mode {
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: 575px) {
+        display: block;
+
+        .dashboard {
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--mode-gray);
+        }
+
+        .mode {
+            justify-content: flex-end;
+            padding-top: 20px;
+        }
+    }
+
+    @media screen and (max-width: 475px) {
+        .mode {
+            justify-content: space-between;
+        }
+    }
+}
+.dark .Header {
+    .total-followers,
+    .mode {
+        color: var(--desaturated-blue-text);
+    }
+
+    h1 {
+        color: white;
+    }
+}

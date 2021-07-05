@@ -1,8 +1,17 @@
 .Attribution {
-    font-size: 11px; 
-    text-align: center; 
+    font-size: 12px;
+    text-align: center;
+    margin: 20px auto;
 
-    a { 
-        color: hsl(228, 45%, 44%); 
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+.dark .Attribution {
+    color: white;
+
+    a {
+        color: var(--desaturated-blue-text);
     }
 }

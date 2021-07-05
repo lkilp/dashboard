@@ -1,0 +1,78 @@
+.OverviewTile {
+    height: 125px;
+    border-radius: var(--boxes-border-radius);
+    background-color: var(--light-grayish-blue-card-bg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title-icon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title-name {
+            color: var(--dark-grayish-blue-text);
+        }
+    }
+
+    .title-icon {
+        padding: 25px 25px 0 25px;
+    }
+
+    .data {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 25px 25px 25px;
+
+        .overview-amount {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--very-dark-blue-text);
+        }
+    }
+
+    .overview-trend {
+        display: flex;
+        color: var(--up-green);
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .trend-amount {
+            font-weight: 700;
+        }
+
+        .trend-direction-icon {
+            margin-right: 3px;
+        }
+
+        &.increase {
+            color: var(--up-green);
+        }
+
+        &.decrease {
+            color: var(--down-red);
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--hover-gray);
+    }
+}
+
+.dark .OverviewTile {
+    background-color: var(--dark-desaturated-blue-card-bg);
+
+    .title-name {
+        color: var(--desaturated-blue-text);
+    }
+
+    .overview-amount {
+        color: white;
+    }
+}
